@@ -4,7 +4,7 @@
 #  Data Area - allocate and initialize variables
 .data
 	# TODO: Write your string definitions here
-	prompt: .asciiz "Enter a integer: "
+	prompt: .asciiz "Enter an integer: "
 
 #Text Area (i.e. instructions)
 .text
@@ -29,15 +29,15 @@ main:
 	and $t1 $t0 1
 
 	# if checker statement 
-    beq $t1 1 if 
+    	beq $t1 1 if 
 
 	#else 
 	mult $t0 $t4
 	mfhi $t2
 	mflo $t3
 	li $v0 1
-    move $a0 $t3
-    syscall
+    	move $a0 $t3
+    	syscall
 	j exit
 
 	#if 	
@@ -46,12 +46,12 @@ main:
 		mfhi $t2
 		mflo $t3
 		li $v0 1
-    	move $a0 $t3
+    		move $a0 $t3
 		syscall
 		
 	j exit
 
 exit:
 	# Exit SPIM: Write your code here!
-    li $v0, 10
-    syscall	
+    	li $v0, 10
+    	syscall	
